@@ -1,430 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
+
 <head>
- <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<style>
-.margin{
- margin:250px;
- }
-.border1{
-display:inline-block;
-width:280px;
-height:400px;
-margin:5px;
-border-dark;
- }
-.fron{
-height:200px;
-width:600px;
-margin:10px;
-}
-.mid{
-height:200px;
-width:100px;
-margin:10px;
-}
-.bot{
-height:200px;
-margin:10px;
-}
-.bot2{
-height:400px;
-width:700px;
-margin:10px;
-}
-.m{
- margin:10px;
- }
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
-}
-.container {
-  padding: 16px;
-}
-span.psw {
-  float: right;
-  padding-top: 16px;
-}
-.modal {
-  display: none; 
-  position: fixed; 
-  z-index: 1; 
-  left: 0;
-  top: 0;
-  width: 100%; 
-  height: 100%; 
-  overflow: auto; 
-  background-color: rgb(0,0,0); 
-  background-color: rgba(0,0,0,0.4); 
-  padding-top: 60px;
-}
-.modal-content {
-  background-color: #fefefe;
-  margin: 5% auto 15% auto; 
-  border: 1px solid #888;
-  width: 80%; 
-}
-.close {
-  position: absolute;
-  right: 25px;
-  top: 0;
-  color: #000;
-  font-size: 35px;
-  font-weight: bold;
-}
-.close:hover,
-.close:focus {
-  color: red;
-  cursor: pointer;
-}
-.animate {
-  -webkit-animation: animatezoom 0.6s;
-  animation: animatezoom 0.6s
-}
-@-webkit-keyframes animatezoom {
-  from {-webkit-transform: scale(0)} 
-  to {-webkit-transform: scale(1)}
-}
-  @keyframes animatezoom {
-  from {transform: scale(0)} 
-  to {transform: scale(1)}
-}
-@media screen and (max-width: 300px) {
-  span.psw {
-     display: block;
-     float: none;
-  }
-  .cancelbtn {
-     width: 100%;
-  }
-}
-.span{
-display:inline-block;
-background-color:#555;
-margin:15px;
-}
-.p,.h2{
-margin:10px;
- }
- .don{
-height:550px;
-background-color:red;
-}
-.border{
-display:inline-block;
-width:380px;
-height:320px;
-margin:5px;
- }
-.foot{
-width=100%;
-background-image:url("bg.jpg");
-}
-.footleft{
-float:left;
-margin:25px;
-}
-.footright{
-float:left;
-margin:70px;
-}
-</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Multi Akun Store</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="icon" href="assets/imagens/favicon.png" type="image/x-icon" />
+    <script type="text/javascript" src="assets/js/script.js"></script>
 </head>
+
 <body>
-<br>
-<br>
-<br>
-<center>
-<nav class="navbar navbar-expand-md bg-danger ">
-  <a class="navbar-brand text-white" href="#">NGO</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav">
-      <li class="nav-item ">
-        <a class="nav-link text-white" href="#">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link  text-white" href="#">Support</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-white" href="#">Feedback</a>
-      </li>    
-    </ul>
-  </div> 
-<div class="float-right">
- <div class="btn-group">
-    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
-       Login
-    </button>
-    <div class="dropdown-menu">
-      <button type="button" class="btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">ADMIN</button><br>
-      <button type="button" class="btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">NGO</button>
-    </div>
-  </div> 
-</div>
-</nav>
-<br>
-<div id="id01" class="modal">
-  
-  <form class="modal-content animate" action="/action_page.php" method="post">
-    
-    <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
+    <i onclick="mostrar(this)" class="fa fa-moon-o fa-2x night_mode"></i>
 
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-        
-      <button type="submit">Login</button>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
+    <img id="userPhoto" src="assets/imagens/perfil.jpg" alt="User Photo">
+
+    <spam id="userName">Multi Akun</spam>
+
+ <div id="links">
+        <a class="link" href="https://www.instagram.com/multiakunstore" target="_blank" style="border-radius: 25px;"><i
+                class="fa fa-instagram" aria-hidden="true"></i> instagram</a>
+        <a class="link" href="https://api.whatsapp.com/send?text=Hallo%20Kak%0Asaya%20mau%20beli%20akun%20nih&phone=6283108180955" target="_blank" style="border-radius: 25px;"><i
+                class="fa fa-whatsapp"></i> Whatsapp</a>
+        <a class="link" href="http://line.me/ti/p/~@862tbfaq" target="_blank" style="border-radius: 25px;"><i
+               class="fa fa-comments-o"></i> Line</a>
+      <a class="link" href="https://twitter.com/multiakunstore" target="_blank" style="border-radius: 25px;"><i
+               class="fa fa-twitter"></i> Twitter</a>
+     <a class="link" href="https://www.facebook.com/multiakunstore" target="_blank" style="border-radius: 25px;"><i
+               class="fa fa-facebook-official"></i> Facebook</a>
+        <a class="link" href="https://t.me/MultiAkun"_blank" style="border-radius: 25px;"><i
+                class="fa fa-telegram" aria-hidden="true"></i> Telegram</a>
     </div>
 
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="psw">Forgot <a href="#">password?</a></span>
+    <div class="footer">
+        <a href="https://t.me/MultiAkun" target="_blank">
+            <i style="line-height: 38px;" class="fa fa-users circulo" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.facebook.com/multiakunstore" target="_blank">
+            <i style="line-height: 38px;" class="fa fa-facebook-f circulo" aria-hidden="true"></i>
+        </a>
+        <a href="https://line.me/R/ti/g/9JdqYg2Mep" target="_blank">
+            <i style="line-height: 38px;" class="fa fa-comments-o circulo" aria-hidden="true"></i>
+        </a>
+        <a href="https://chat.whatsapp.com/LozVon36swP5lkzzwSoqUI" target="_blank">
+            <i style="line-height: 38px;" class="fa fa-whatsapp circulo" aria-hidden="true"></i>
+        </a>
     </div>
-  </form>
-</div>
 
-<script>
-var modal = document.getElementById('id01');
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
- <div class="four">
-<div id="demo1" class="carousel slide" data-ride="carousel">
-
-  <ul class="carousel-indicators">
-    <li data-target="#demo1" data-slide-to="0" class="active"></li>
-    <li data-target="#demo1" data-slide-to="1"></li>
-    <li data-target="#demo1" data-slide-to="2"></li>
-    <li data-target="#demo1" data-slide-to="3"></li>
- </ul>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="d10.jpg" alt="Los Angeles" width="800" height="300">
-    </div>
-    <div class="carousel-item">
-      <img src="d8.jpg" alt="Chicago" width="800" height="300">
-    </div>
-    <div class="carousel-item">
-      <img src="d12.webp" alt="New York" width="800" height="300">
-    </div>
- <div class="carousel-item">
-      <img src="d11.webp" alt="New York" width="800" height="300">
-    </div>
- </div>
-  <a class="carousel-control-prev" href="#demo1" data-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </a>
-  <a class="carousel-control-next" href="#demo1" data-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </a>
-</div><br>
-</div>
-<div class="row container m-0  px-md-5">
-<div class="col-md-6 p-3">
-<img class="img-fluid" src="d6.png" alt="our story" >
-</div>
-<div class="col-md-6 p-3">
-<img class="img-fluid" src="d5.jpg" alt ="our goal">
-</div>
-<div class="col-md-6 p-3 ">
-<a href="ngodeatilsfetch.java"><img class="img-fluid" src="d4.webp" alt="our story" ></a>
-</div>
-<div class="col-md-6 p-3">
-<a href="helpdesk.html"><img class="img-fluid" src="d7.jpg" alt ="help desk" ></a>
-</div>
-</div>
-<br>
-<br>
- <div class="row m-0 container px-md-5">
-<div class="col-md-6 ">
-<img src="d5.jpg" class="img-fluid">
-</div>
-<div class=" col-md-6 ">
-<img src="d5.jpg" class="img-fluid">
-</div>
-</div>
-<br>
-<div class="bot bg-dark">
-<h1 class="text-white">SCHEMES</h1>
-</div><br>
-<div class="row m-0 container px-md-5">
-<div class="col-md-6 ">
-<img src="d5.jpg" class="img-fluid">
-</div>
-<div class=" col-md-6 ">
-<img src="d5.jpg" class="img-fluid">
-</div>
-</div>
-
-<div class="row m-0 container">
-  <div class="col-md-6 mb-md-0 mb-4">
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="d5.jpg" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
-</div>
-  <div class="col-md-6">
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="d5.jpg" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
-</div>
-</div><button type="button" class="btn btn-danger">
-       VIEW MORE SCHEMES
-    </button>
-<br>
-</div>
- <div class="span">
-<span class="rounded text-white">
-<img src="d8.jpg" class="img-fluid">
-<br>
-<br>
-<h2>NAVJIVAN</h2>
- <p>dhfj usgu biuedh vyidged uygteiuwb uyegwkj jhgweidw</p>
-<hr>
-<div class="float:left">
-<p>NGO:Tushar   </p></div>
-<br>
-</span>
-</div>
-<div class="span">
-<span class="rounded text-white">
-<img src="d8.jpg" class="img-fluid">
-<br>
-<br>
-<h2>NAVJIVAN</h2>
- <p>dhfj usgu biuedh vyidged uygteiuwb uyegwkj jhgweidw</p>
-<hr>
-<div class="float:left">
-<p>NGO:Tushar   </p></div>
-<br>
-</span>
-</div>
-<div class="span">
-<span class="rounded text-white">
-<img src="d8.jpg" class="img-fluid">
-<br>
-<br>
-<h2>NAVJIVAN</h2>
-<p>
-dhfj usgu biuedh vyidged uygteiuwb uyegwkj jhgweidw
-</p>
-<hr>
-<div>
-<p>NGO:Tushar   </p></div>
-</div><br>
- <button type="button" class="btn btn-danger">
-       VIEW MORE ACTIVITIES
-    </button></span>
-<br><br>
-<br>
-<br>
-
-<div class="don">
-<div id="demo" class="carousel slide" data-ride="carousel">
-<ul class="carousel-indicators">
-    <li data-target="#demo" data-slide-to="0" class="active"></li>
-    <li data-target="#demo" data-slide-to="1"></li>
-    <li data-target="#demo" data-slide-to="2"></li>
-  </ul>
- <div class="carousel-inner">
- <div class="carousel-item">
-      <img  src="d1.png" alt="New York" width="1100" height="350">
-    </div>
-    <div class="carousel-item active">
-      <img  src="d2.png" alt="Los Angeles" width="1100" height="350"></div>
-    <div class="carousel-item">
-      <img  src="d3.png" alt="New York" width="1100" height="350">
-    </div>
- </div>
-  <a class="carousel-control-prev" href="#demo" data-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </a>
-  <a class="carousel-control-next" href="#demo" data-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </a>
-</div><br>
-
-<h2 class="text-white">Your Support<h2>
-<h3 class="text-white">may help us</h3><br>
-<a href="donation.html"><button type="button"  class="btn btn-danger">Donate now</button></a>
-
-</div>
-<br>
-<br>
-<div class="foot text-white">
-<center>
-<br>
-<img src=d4.webp height=100 width=100>
-<p>xswjdmdhv udwyd;jende vudgdj bdgedv fedihdb ejdged kbdei7dge jgdeiudg vkegduek jmdehidek, idehoek, keheikdb mehdie</p>
-<center>
-<span class="border border-primary">
-<div class="footleft">
-
- <form action="/action_page.php">
-<center><h3>Mailing Form</h3></center>
-    <div class="form-group" style="background:transparent">
-      
-      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-    </div>
-    <div class="form-group">
-      
-      <input type="password" class="form-control" id="pwd" placeholder="Enter Name" name="pswd">
-    </div>
-    <div class="form-group">
-      
-      <input type="text" class="form-control h-25"  id="pwd" placeholder="Your Message" name="pswd">
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
-</div>
-</span>
-<span class="border border-primary">
-<div class="footright">
-<center>
-Number +91 9897638767<br>
-Message +91 9897638767<br>
-Email abc@gmai.com<br>
-Fax 766387 <br>
-<center>
-</span>
-</div>
-</center>
-</center>
-</div>
-</center>
+    <!-- Javascript -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src="index.js"></script>
 </body>
+
 </html>
