@@ -16,24 +16,19 @@
 
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Tedy Ramdani official website">
-    <meta property="og:title" content="Tedy Ramdani official website">
-    <meta property="og:description" content="Tedy Ramdani official website">
-    <meta property="og:site_name" content="Tedy Ramdani official website">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <title>Tedy Ramdani (AyraHikari)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Multi Akun Store</title>
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="icon" href="assets/imagens/favicon.png" type="image/x-icon" />
+</head>
 
-    <!-- Add to homescreen for Chrome on Android -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <link rel="icon" sizes="192x192" href="images/AyraHikari.png">
+<body>
+    <i onclick="mostrar(this)" class="fa fa-moon-o fa-2x night_mode"></i>
 
-    <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Tedy Ramdani">
-    <link rel="apple-touch-icon-precomposed" href="images/AyraHikari.png">
+    <img id="userPhoto" src="assets/imagens/perfil.jpg" alt="User Photo">
+
+    <spam id="userName">Multi Akun</spam>
 
     <!-- Tile icon for Win8 (144x144 + tile color) -->
     <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
@@ -52,31 +47,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
 
 </head>
-
-<body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-        <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
-            <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-            </div>
-            <div class="mdl-layout--large-screen-only mdl-layout__header-row" id="my_photo_profile">
-                <img class="my-api-image" id="rqlogo" src="images/AyraHikari.png" alt="Ayra Hikari" style="width:150px;height:150px;border-radius: 20px;padding: 2px;">
-                <h3>Ayra Hikari</h3>
-                <script>
-                    const username = 'AyraHikari'
-                    fetch('https://api.codetabs.com/v1/proxy?quest=https://t.me/' + username)
-                        .then(async(res) => {
-                            const text = await res.text()
-                            const photo = /class="tgme_page_photo_image" src="(.+?)"/.exec(text)[1]
-                            document.getElementById("my_photo_profile").innerHTML = `<img class="my-api-image" id="rqlogo" src="${photo}" alt="AyraHikari" style="width:150px;height:150px;border-radius: 20px;padding: 2px;"><h3>Ayra Hikari</h3>`
-                        })
-                </script>
-            </div>
-            <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-            </div>
-            <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
-                <a href="index.html" class="mdl-layout__tab">HOME</a>
-                <a href="donations.html" class="mdl-layout__tab is-active">DONATIONS</a>
-                <a href="about.html" class="mdl-layout__tab">ABOUT ME</a>
             </div>
         </header>
         <main class="mdl-layout__content">
